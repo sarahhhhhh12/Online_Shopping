@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SignUp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/connect.png">
+    <script src="js/jquery.js"></script>
+    <script src="js/sign_up.js"></script>
+    <script src="css/bootstrap/js/bootstrap.js"></script>
+</head>
+
+<body>
+
+    <div class="row">
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="item">
+                            <center>
+                                <img src="images/connect.png" alt="Connect with yourself" style="margin-top: 4px;">
+                            </center>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <h1 class="heading">Connect with yourself
+                            </h1>
+                    </div>
+                </nav>
+            </div>
+
+            <center>
+                <div style="margin-top: 150px;">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="test" style="margin-top: 130px;">
+                            <div class="row">
+                                <div style="max-width: 100%; max-height: 100%;"></div>
+                               
+                            </div>
+                        </div>
+                        <div id="login" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <form name="SignUp" id="login" role="form" style="margin:20px;" method="post">
+                                <fieldset>
+                                    <h2 style="color: white;">Sign up to world within you</h2>
+                                    <hr class="colorgraph">
+                                    <div class="form-group">
+                                        <input type="text" name="firstName" id="firstName" class="form-control input-lg" placeholder="First Name" onkeyup="fnameValidation();" required>
+                                        <span id="correctfName" class="correctfName" style="color: white;">John</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" name="lastName" id="lastName" class="form-control input-lg" placeholder="Last Name" onkeyup="lnameValidation();" required>
+                                        <span id="correctlName" class="correctlName" style="color: white;">Doe</span>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <input type="text" name="email" id="email" class="form-control input-lg" placeholder="Email Address" onblur="emailValidation(); checkEmail();" required>
+                                        <span id="correctemail" class="correctemail" style="color: white;">John.Doe@gmail.com</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" onblur="passwordStrength();" required>
+                                        <span id="confirmMessage" class="confirmMessage" style="color: white;">****** (6 characters minimum)</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" name="confirmPassword" id="confirmPassword" class="form-control input-lg" placeholder="Confirm Password" onblur="checkPass();" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" name="phoneNumber" id="phoneNumber" class="form-control input-lg" placeholder="Phone Number" oninput="phNumberValidation();" required>
+                                        <span id="correctphnumber" class="correctphnumber" style="color: white;">9876543210</span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea type="textarea" placeholder="Permanent Address" class="form-control input-lg" id="permanentAddress" autocomplete="off"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <center>
+                                                <input type="checkbox" id="sameAsAbove" name="sameAsAbove" onclick="copyAddress();">
+                                                <label for="sameAsAbove" style="color:white;">same as above
+                                                </label>
+                                            </center>
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="form-group">
+                                        <textarea type="textarea" placeholder="Contact Address" class="form-control input-lg" id="contactAddress" autocomplete="off"></textarea>
+                                    </div>
+
+                                    <div class="form-group" style="color: white;">
+                                        <label for="radio-inline" style="color:white;">Gender : &nbsp
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio" autocomplete="off">Female
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio" autocomplete="off" checked="checked">Male
+                                        </label>
+
+                                    </div>
+
+
+                                    <hr class="colorgraph">
+
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                                            <button type="button" class="btn btn-lg btn-success btn-block" onclick="return store();">Sign up</button>
+                                        </div>
+
+                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <button class="btn btn-lg btn-primary btn-block" onclick="reDirect();">Sign in</button>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-top: 130px;">
+                            <div class="row">
+                                <div style="max-width: 100%; max-height: 100%;"></div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+
+        <br>
+        <div class="alert" id="alertMessage">
+            <div class="row">
+                <center>
+                    <span class="alert alert-class" id="Message"> </span>
+                    <a style="visibility: hidden;" id="forgotClose"></a>
+                </center>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
